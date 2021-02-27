@@ -6,10 +6,10 @@ from j2x import core
 from j2x.response import BaseResponse, FailureResponse, SuccessResponse
 
 
+JsonPath = str
+
 app = FastAPI()
 
-
-JsonPath = str
 
 @app.get('/ping', response_model=BaseResponse)
 async def ping():
