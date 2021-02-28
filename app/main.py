@@ -2,8 +2,8 @@ import aiohttp
 from fastapi import FastAPI, Response
 from fastapi.responses import PlainTextResponse, RedirectResponse
 
-from app.j2x import core
-from app.j2x.response import BaseResponse, FailureResponse, SuccessResponse
+from j2x import core
+from j2x.response import BaseResponse, FailureResponse, SuccessResponse
 
 
 JsonPath = str
