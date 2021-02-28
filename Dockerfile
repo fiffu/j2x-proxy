@@ -6,3 +6,4 @@ RUN pip install -r /requirements.txt
 
 # Import the app code
 COPY ./app /app
+ENV PYTHONPATH=/app
