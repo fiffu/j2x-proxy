@@ -1,7 +1,7 @@
 # j2x-proxy
 
 ```py
-json2xml = lambda url, jsonpath: '''<xml>'''
+json2xml = lambda url, jsonpath: '<xml>'
 ```
 
 j2x-proxy is a [FastAPI](https://fastapi.tiangolo.com/) server with some GET endpoints
@@ -19,7 +19,7 @@ Let's say you want to get some data off Yahoo Finance:
 
 ```sh
 # url:  https://query1.finance.yahoo.com/v7/finance/spark?symbols=BTC-USD
-# path: $..regularMarketPrice`
+# path: $..regularMarketPrice
 curl -X GET "http://localhost:8000/xml?url=https%3A%2F%2Fquery1.finance.yahoo.com%2Fv7%2Ffinance%2Fspark%3Fsymbols%3DBTC-USD&path=%24..regularMarketPrice"
 # <?xml version="1.0" encoding="UTF-8" ?><root><item type="float">46944.78</item></root>
 ```
