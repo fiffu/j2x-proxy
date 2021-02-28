@@ -4,8 +4,8 @@ from typing import Awaitable
 from dicttoxml import dicttoxml
 from jsonpath_ng import parse
 
-from j2x import fetcher
-from j2x.response import FailureResponse, SuccessResponse
+from app.j2x import fetcher
+from app.j2x.response import FailureResponse, SuccessResponse
 
 
 class ReturnFormat(Enum):
