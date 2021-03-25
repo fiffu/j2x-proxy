@@ -1,7 +1,7 @@
 # j2x-proxy
 
 ```py
-json2xml = lambda url, jsonpath: '<xml>'
+json2xml = lambda url, jsonpath: '</xml>'
 ```
 
 j2x-proxy is a [FastAPI](https://fastapi.tiangolo.com/) server with some GET endpoints
@@ -24,6 +24,17 @@ curl -X GET "http://localhost:8000/xml?url=https%3A%2F%2Fquery1.finance.yahoo.co
 # <?xml version="1.0" encoding="UTF-8" ?><root><item type="float">46944.78</item></root>
 ```
 
+And you also happen to be some kind of Google Sheets ninja:
+
+```
+=IMPORTXML(
+"http://localhost:8000/"
+  & "url=" & ENCODEURL("https://query1.finance.yahoo.com/v7/finance/spark?symbols=")
+  & "BTC-USD"
+  & "&path=" & ENCODEURL("$..regularMarketPrice"),
+"//item")
+```
+
 ## Setup
 
 ```sh
@@ -32,7 +43,7 @@ pip install -r requirements.txt
 uvicorn j2x.main:app --reload
 ```
 
-The auto-generated handily doubles as a GUI - `http://localhost:8000/docs`
+The auto-generated API documentation also handily doubles as a GUI - `http://localhost:8000/docs`
 
 ## References
 
