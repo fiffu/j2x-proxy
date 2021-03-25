@@ -1,7 +1,7 @@
 # j2x-proxy
 
 ```py
-json2xml = lambda url, jsonpath: '</xml>'
+json2xml = lambda url, jsonpath: '<xml/>'
 ```
 
 j2x-proxy is a [FastAPI](https://fastapi.tiangolo.com/) server with some GET endpoints
