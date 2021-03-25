@@ -28,11 +28,11 @@ And you also happen to be some kind of Google Sheets ninja:
 
 ```
 =IMPORTXML(
-"http://localhost:8000/"
-  & "url=" & ENCODEURL("https://query1.finance.yahoo.com/v7/finance/spark?symbols=")
-  & "BTC-USD"
-  & "&path=" & ENCODEURL("$..regularMarketPrice"),
-"//item")
+  "http://localhost:8000/"
+    & "url=" & ENCODEURL("https://query1.finance.yahoo.com/v7/finance/spark?symbols=")
+    & "BTC-USD"
+    & "&path=" & ENCODEURL("$..regularMarketPrice"),
+  "//item")
 ```
 
 ## Setup
