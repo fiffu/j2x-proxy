@@ -31,10 +31,10 @@ async def xml(res: Response, url: str, path: str = '$') -> PlainTextResponse:
 async def _work(res: Response, url: str, path: str, fmt: core.ReturnFormat):
     try:
         return await core.get(res, url, path, fmt)
-    
+
     except aiohttp.ClientResponseError as err:
         res.status_code = err.status
-        
+
         content = None
         if err.history:
             content = str(err.history[-1].content)
@@ -43,15 +43,10 @@ async def _work(res: Response, url: str, path: str, fmt: core.ReturnFormat):
 
         return FailureResponse(message=msg, result=content)
 
-    except aiohttp.ClientError:
-        res.status_code = 500
-        return FailureResponse(message='Internal server error.')
-
     except BaseException as err:
         msg = f'{err.__class__.__name__}: {str(err)}'
         res.status_code = 500
         return FailureResponse(message=msg)
-    return FailureResponse(message='Internal server error.')
 
 
 @app.get('/')
