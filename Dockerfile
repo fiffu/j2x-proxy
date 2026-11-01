@@ -7,3 +7,5 @@ RUN pip install -r /requirements.txt
 # Import the app code
 COPY ./app /app
 ENV PYTHONPATH=/app
+
+ENV PORT=8000
